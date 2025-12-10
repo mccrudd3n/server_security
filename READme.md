@@ -31,3 +31,5 @@ Optional automation for log rotation, deletion, and archiving
 Configurable thresholds for security scoring
 
 Fully decoupled pipeline for performance and scalability
+
+Test
