@@ -1,35 +1,94 @@
-SSH Security Monitoring & Analysis Pipeline
-Overview
+# SSH Security Monitoring & Analysis Pipeline (Archived)
 
-This project provides a robust, multi-stage system to monitor, archive, enrich, and report SSH login attempts on Linux servers. It is designed for data science, security monitoring, and LLM-ready data pipelines, combining automated log collection with threat analysis.
+## ⚠️ Project Status: Archived
 
-The pipeline follows a three-stage architecture:
+This repository has been **archived** and is no longer under active development.
 
-Stage 1 – Data Collection:
-Lightweight Bash script collects SSH authentication events, including timestamps, usernames, source IPs, and results, saving them as structured JSONL files for long-term storage and analysis.
+The functionality, concepts, and architecture described here have been **fully implemented and integrated into the Modular MOTD Health System**, which is now the **canonical and actively maintained project**.
 
-Stage 2 – Data Enrichment:
-Python script enriches the raw data with intelligence such as ASN, GeoIP, reverse DNS lookups, and threat heuristics. Outputs machine-learning-ready datasets in JSONL and Parquet formats.
+👉 **Active Project:**
+[https://github.com/mccrudd3n/Modular-MOTD-Health-System](https://github.com/mccrudd3n/Modular-MOTD-Health-System)
 
-Stage 3 – Security Reporting:
-Generates human-readable security reports and structured JSON summaries, including attack metrics, top attacking IPs, and security scores. Can integrate with Telegram notifications or dashboards.
+---
 
-Features
+## Overview (Historical)
 
-Collects and archives SSH logs and system logs automatically
+This project originally provided a robust, multi-stage system for monitoring, archiving, enriching, and reporting SSH login attempts on Linux servers. It was designed for:
 
-Tracks failed login attempts, invalid users, and brute-force attacks
+* Security monitoring
+* Data science workflows
+* LLM- and ML-ready data pipelines
 
-Enriches IPs with ASN, GeoIP, and reverse DNS lookups
+The system combined automated log collection with threat analysis and reporting, forming the foundation for what is now implemented in the MOTD Health System.
 
-Produces LLM- and ML-ready structured datasets
+---
 
-Generates daily security overview reports (TXT + JSON)
+## Original Architecture
 
-Optional automation for log rotation, deletion, and archiving
+The pipeline followed a **three-stage architecture**, which has since been adapted and expanded within the MOTD project.
 
-Configurable thresholds for security scoring
+### Stage 1 – Data Collection
 
-Fully decoupled pipeline for performance and scalability
+A lightweight Bash-based collector monitored SSH authentication logs and extracted:
 
-Test
+* Timestamps
+* Usernames (including invalid users)
+* Source IP addresses
+* Authentication results
+
+Events were stored as structured **JSONL** files for long-term analysis.
+
+---
+
+### Stage 2 – Data Enrichment
+
+A Python-based enrichment layer augmented raw SSH events with:
+
+* ASN and organization data
+* GeoIP location data
+* Reverse DNS lookups
+* Threat heuristics
+
+Outputs were generated in **JSONL** and **Parquet** formats suitable for ML pipelines.
+
+---
+
+### Stage 3 – Security Reporting
+
+Reporting components generated:
+
+* Human-readable security summaries
+* Structured JSON metrics
+* Attack statistics and top offending IPs
+* Configurable security scores
+
+Optional integrations included Telegram notifications and dashboard ingestion.
+
+---
+
+## Key Features (Now in MOTD)
+
+All of the following capabilities now exist **within the Modular MOTD Health System**, often in expanded or optimized form:
+
+* Automated collection and archiving of SSH and system logs
+* Detection of failed logins, invalid users, and brute-force attempts
+* IP enrichment using ASN, GeoIP, and reverse DNS
+* LLM- and ML-ready structured datasets
+* Daily security overview reporting (text and JSON)
+* Optional log rotation, pruning, and archival
+* Configurable thresholds for scoring and alerting
+* Fully decoupled, modular, and scalable design
+
+---
+
+## Migration Note
+
+If you are:
+
+* Looking to deploy SSH monitoring
+* Interested in MOTD-based system health reporting
+* Building security telemetry for automation or ML
+
+➡️ **Use the Modular MOTD Health System instead of this repository.**
+
+This repository remains available **for historical reference only**.
